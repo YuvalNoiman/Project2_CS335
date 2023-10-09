@@ -6,7 +6,7 @@ import ast
 def main():
 
    file1 = open("Input.txt", "r")
-   file2 = open("Output.txt","w")
+   file2 = open("OutputB.txt","w")
    while True:
       try:
          size_of_array  = int(file1.readline(()

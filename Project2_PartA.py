@@ -4,7 +4,13 @@
 import ast
 
 def create_combinations(size, items):
-
+   combinations = []
+   i = 1
+   while (i <= size):  
+      combinations.append(items)
+      i = i + 1
+   return combinations
+   
 def verify_combinations(M, items, canidate):
    if (len(canidate) > len(items)):
       return False

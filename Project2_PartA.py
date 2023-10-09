@@ -32,8 +32,8 @@ def total_value(canidate):
 def stock_maximization(M, items):
    best = None
    for canidate in range(len(items)):
-      if verify_combinations(M, items, canidate):
-         if ((best == None) or (total_value(canidate) > total_value(best))):
+      if verify_combinations(M, items, items[canidate]):
+         if ((best == None) or (total_value(items[canidate]) > total_value(best))):
             best = canidate
    return best
    
@@ -45,9 +45,10 @@ def main():
       try:
          size_of_array  = int(file1.readline(()
          stocks_and_values = ast.literal_eval(file1.readline())
-         Amount = int(file1.readline())
+         amount = int(file1.readline())
          file1.readline()
-         #file2.write(str()+"\n\n")
+         combinations = create_combinations(size_of_array, stocks_and_values)
+         file2.write(str(stock_maximization(amount,combinations)+"\n\n")
       except:
          break
 

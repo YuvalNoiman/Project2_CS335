@@ -3,6 +3,20 @@
 # File Purpose: Calculates stock purchase maximization using exhaustive search approach
 import ast
 
+def verify_combinations(M, items, canidate):
+   return True
+
+def total_value(canidate):
+   return 0
+   
+def stock_maximization(M, items):
+   best = None
+   for canidate in range :
+      if verify_combinations(M, items, canidate):
+         if ((best == None) or (total_value(canidate) > total_value(best))):
+            best = canidate
+   return best
+   
 def main():
 
    file1 = open("Input.txt", "r")

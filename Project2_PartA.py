@@ -35,16 +35,17 @@ def total_value(canidate):
       total = total + canidate[x][0]
    return total
    
-def stock_maximization(M, items):
+def stock_maximization(M, items, size):
    #computes best stock value which fits parameter
    best = None
-   for canidate in range(len(items)):
-      if verify_combinations(M, items, canidate):
-         if ((best == None) or (total_value(items[canidate]) > total_value(items[best]))):
+   combinations = create_combinations(size, items)
+   for canidate in range(len(combinations)):
+      if verify_combinations(M, combinations, canidate):
+         if ((best == None) or (total_value(combinations[canidate]) > total_value(combinations[best]))):
             best = canidate
    if (best == None):
        return 0
-   return total_value(items[best])
+   return total_value(combinations[best])
    
 def main():
 
@@ -56,8 +57,7 @@ def main():
          stocks_and_values = ast.literal_eval(file1.readline())
          amount = int(file1.readline())
          file1.readline()
-         combinations = create_combinations(size_of_array, stocks_and_values)
-         file2.write(str(stock_maximization(amount, combinations))+"\n\n")
+         file2.write(str(stock_maximization(amount, stocks_and_values, size_of_array))+"\n\n")
       except:
          break
    file1.close()

@@ -27,7 +27,7 @@ def verify_combinations(M, items, canidate):
    return False
 
 def total_value(canidate):
-   #gets total value fo the canidate
+   #gets total value of the canidate
    if (canidate == None):
       return 0
    total = 0

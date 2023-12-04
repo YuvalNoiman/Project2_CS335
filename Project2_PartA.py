@@ -5,14 +5,11 @@ import ast
 
 def create_combinations(size, items):
    combinations = []
-   values = []
-   for x in items:
-      values.append(x)
-   for i in range(2 ** len(values)):
+   for i in range(2 ** size):
       combo = []
       for j in range(size):
           if((i>>j) & 1) == 1:
-              combo.append(values[j])
+              combo.append(items[j])
       combinations.append(combo)
    return combinations
 

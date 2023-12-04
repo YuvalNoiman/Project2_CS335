@@ -3,13 +3,12 @@
 # File Purpose: Calculates stock purchase maximization using exhaustive search approach
 import ast
 
-def create_combinations(size, items, combinations):
-   if (size == 0):
-       return
-   if (items not in combinations):
-      for x in range(0, size):
-         create_combinations(size-1, items[0:x]+items[x+1:size], combinations)
-      combinations.append(items)
+def create_combinations(size, items, combinations, current_subset, index):
+   combinations.append(current_subset[:])
+   for x in range(index, size):
+      current_subset.append(items[x])
+      create_combinations(size, items, combinations, current_subset, x+1)
+      current_subset.pop()
 
 def verify_combinations(M, items, canidate):
    value = items[canidate]
@@ -51,7 +50,7 @@ def main():
          amount = int(file1.readline())
          file1.readline()
          combo = []
-         create_combinations(size_of_array, stocks_and_values, combo)
+         create_combinations(size_of_array, stocks_and_values, combo, [], 0)
          print(stock_maximization(amount, combo))
          file2.write(str(stock_maximization(amount,combo))+"\n\n")
       except:

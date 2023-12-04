@@ -30,7 +30,6 @@ def main():
          stocks_and_values = ast.literal_eval(file1.readline())
          amount = int(file1.readline())
          file1.readline()
-         print(stock_maximization(amount, stocks_and_values, size_of_array))
          file2.write(str(stock_maximization(amount, stocks_and_values, size_of_array))+"\n\n")
       except:
          break

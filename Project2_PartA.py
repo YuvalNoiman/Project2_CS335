@@ -4,6 +4,7 @@
 import ast
 
 def create_combinations(size, items):
+   #creates all combinations
    combinations = []
    for i in range(2 ** size):
       combo = []
@@ -14,6 +15,7 @@ def create_combinations(size, items):
    return combinations
 
 def verify_combinations(M, items, canidate):
+   #verifies the canidate
    value = items[canidate]
    if (len(value) > len(items)):
       return False
@@ -25,6 +27,7 @@ def verify_combinations(M, items, canidate):
    return False
 
 def total_value(canidate):
+   #gets total value fo the canidate
    if (canidate == None):
       return 0
    total = 0
@@ -33,6 +36,7 @@ def total_value(canidate):
    return total
    
 def stock_maximization(M, items):
+   #computes best stock value which fits parameter
    best = None
    for canidate in range(len(items)):
       if verify_combinations(M, items, canidate):

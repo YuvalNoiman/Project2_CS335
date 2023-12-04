@@ -4,6 +4,7 @@
 import ast
 
 def stock_maximization(M, items, size):
+   #computes best stock value which fits parameter
    array = [[0 for x in range(M + 1)] for x in range(size + 1)]
    for i in range(0, size + 1):
       for w in range(0, M + 1):
@@ -16,6 +17,7 @@ def stock_maximization(M, items, size):
    return array[size][M]
 
 def max(case1, case0):
+   #gets maximum value
    if case1 >= case0:
       return case1
    return case0

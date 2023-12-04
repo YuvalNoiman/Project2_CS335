@@ -53,7 +53,6 @@ def main():
          amount = int(file1.readline())
          file1.readline()
          combinations = create_combinations(size_of_array, stocks_and_values)
-         print(stock_maximization(amount, combinations))
          file2.write(str(stock_maximization(amount, combinations))+"\n\n")
       except:
          break
